@@ -10,7 +10,7 @@ release.properties
 hs_err_pid*
 replay_pid*
 
-# Entorno y secretos (no subir credenciales; .env.example sí)
+# Entorno y secretos 
 .env
 
 # IDE
