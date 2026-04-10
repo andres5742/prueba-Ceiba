@@ -1,0 +1,261 @@
+{
+  "info": {
+    "_postman_id": "2d7c372f-c7d4-4d09-a627-801f60873291",
+    "name": "prueba_tecnica",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15815018",
+    "_collection_link": "https://go.postman.co/collection/15815018-2d7c372f-c7d4-4d09-a627-801f60873291?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "funcionamiento",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "registro user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "brs",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"andres@test.com\",\r\n  \"password\": \"clave12345\",\r\n  \"notification_preference\": \"sms\",\r\n  \"phone\": \"+573118724258\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/register",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"andres@test.com\",\r\n  \"password\": \"clave12345\"\r\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/auth/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver tu perfil y saldo",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBpdG9AY2x1c3Rlci5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzc1ODMyODA3LCJleHAiOjE3NzU4MzY0MDd9.ZjiYpPabkRPbDhlKEujTZul80mVm4TeD5Wokuq0YUtE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/auth/me",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listar fondos",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXZpZEB0ZXN0LmNvbSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3NzU4MjkzNjgsImV4cCI6MTc3NTgzMjk2OH0.9ZfNvSa3-9PSYO7OPlDX79--cJW9tQ8zzEbpGOiblTE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/funds",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "funds"
+          ],
+          "query": [
+            {
+              "key": "a",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Suscribirse a fondos",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYXZpZEB0ZXN0LmNvbSIsInJvbGUiOiJjbGllbnQiLCJpYXQiOjE3NzU4MjkzNjgsImV4cCI6MTc3NTgzMjk2OH0.9ZfNvSa3-9PSYO7OPlDX79--cJW9tQ8zzEbpGOiblTE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/funds/5/subscribe",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "funds",
+            "5",
+            "subscribe"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ver suscripciones",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyZXNAdGVzdC5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzc1ODI1NTkyLCJleHAiOjE3NzU4MjkxOTJ9.HaDkVldXtJo_NIRz5DlpXYWHNXKvX4b6yd5Sydal4lU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/subscriptions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "subscriptions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ver transacciones",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyZXNAdGVzdC5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzc1ODI1NTkyLCJleHAiOjE3NzU4MjkxOTJ9.HaDkVldXtJo_NIRz5DlpXYWHNXKvX4b6yd5Sydal4lU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/transactions?=",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "transactions"
+          ],
+          "query": [
+            {
+              "key": null,
+              "value": "",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "eliminar suscripcion",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmRyZXNAdGVzdC5jb20iLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNzc1ODI1NTkyLCJleHAiOjE3NzU4MjkxOTJ9.HaDkVldXtJo_NIRz5DlpXYWHNXKvX4b6yd5Sydal4lU",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/subscriptions/aba41711-658c-4c23-aa23-69d3170afd80",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "subscriptions",
+            "aba41711-658c-4c23-aa23-69d3170afd80"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
