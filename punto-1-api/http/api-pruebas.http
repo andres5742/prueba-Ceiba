@@ -1,6 +1,6 @@
 ### Variables (ajusta puerto si usas 8000 con docker compose)
 @base = http://localhost:8080
-@token = pegar_access_token_aqui
+@token = access_token
 
 ### Health (sin auth)
 GET {{base}}/health
@@ -10,7 +10,7 @@ POST {{base}}/auth/register
 Content-Type: application/json
 
 {
-  "email": "pepito@test.com",
+  "email": "pepito@gmail.com",
   "password": "clave12345",
   "notification_preference": "email"
 }
@@ -20,7 +20,7 @@ POST {{base}}/auth/login
 Content-Type: application/json
 
 {
-  "email": "pepito@test.com",
+  "email": "pepito@gmail.com",
   "password": "clave12345"
 }
 

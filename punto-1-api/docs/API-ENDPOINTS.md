@@ -29,7 +29,7 @@ Body ejemplo:
 
 ```json
 {
-  "email": "demo@test.com",
+  "email": "pepito@gmail.com",
   "password": "clave12345",
   "notification_preference": "email"
 }
@@ -41,7 +41,7 @@ Para SMS hace falta teléfono:
 
 ```json
 {
-  "email": "demo@test.com",
+  "email": "pepito@gmail.com",
   "password": "clave12345",
   "notification_preference": "sms",
   "phone": "+573001234567"
@@ -56,7 +56,7 @@ Para SMS hace falta teléfono:
 
 ```json
 {
-  "email": "demo@test.com",
+  "email": "pepito@gmail.com",
   "password": "clave12345"
 }
 ```
