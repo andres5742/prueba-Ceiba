@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: btg-fondos-api
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/btg_fondos}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  initial-balance-cop: ${INITIAL_BALANCE_COP:500000}
+  field-encryption-key: ${FIELD_ENCRYPTION_KEY:}
+
+jwt:
+  secret: ${JWT_SECRET_KEY:dev-secret-must-be-at-least-32-bytes-long!!}
+  expiration-minutes: ${JWT_EXPIRATION_MINUTES:60}
+
+springdoc:
+  swagger-ui:
+    path: /docs
+
+logging:
+  level:
+    com.btg.fondos: INFO

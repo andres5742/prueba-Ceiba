@@ -1,0 +1,32 @@
+# Maven / Java
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+release.properties
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+
+# Entorno y secretos (no subir credenciales; .env.example sí)
+.env
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Otros
+.pytest_cache/
+__pycache__/

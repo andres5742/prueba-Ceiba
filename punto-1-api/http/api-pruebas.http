@@ -1,0 +1,51 @@
+### Variables (ajusta puerto si usas 8000 con docker compose)
+@base = http://localhost:8080
+@token = pegar_access_token_aqui
+
+### Health (sin auth)
+GET {{base}}/health
+
+### Registro
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "pepito@test.com",
+  "password": "clave12345",
+  "notification_preference": "email"
+}
+
+### Login — copia access_token del JSON y ponlo arriba en @token
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "pepito@test.com",
+  "password": "clave12345"
+}
+
+### Fondos (requiere Bearer)
+GET {{base}}/funds
+Authorization: Bearer {{token}}
+
+### Perfil
+GET {{base}}/auth/me
+Authorization: Bearer {{token}}
+
+### Suscribirse al fondo 3 (DEUDAPRIVADA, mínimo 50.000 COP)
+POST {{base}}/funds/3/subscribe
+Authorization: Bearer {{token}}
+
+### Misma suscripción con idempotencia (repetir = misma respuesta, sin doble cargo)
+POST {{base}}/funds/3/subscribe
+Authorization: Bearer {{token}}
+Idempotency-Key: demo-subscribe-001
+Idempotency-Version: 1
+
+### Suscripciones
+GET {{base}}/subscriptions
+Authorization: Bearer {{token}}
+
+### Transacciones
+GET {{base}}/transactions
+Authorization: Bearer {{token}}
